@@ -51,22 +51,11 @@ APIキーはWindows DPAPIで保護し、確認操作まで非表示です。会�
 
 [権限の説明](docs/PERMISSIONS.md) / [プライバシーポリシー](docs/PRIVACY_POLICY.md) / [利用条件](docs/TERMS.md)
 
-## 開発・検証
+## 技術構成
 
 Windows版はC# / .NET 10、WPF、WebView2、React / TypeScript、SQLiteで構成しています。Electronではありません。UIはDesktop専用の同梱資産で、Web版の開発サーバーは不要です。
 
-```powershell
-cd src/LumaAI.Windows/WebUi
-npm ci
-npm run typecheck
-npm run build
-cd ../../..
-dotnet test tests/LumaAI.Desktop.Tests/LumaAI.Desktop.Tests.csproj -c Release
-dotnet build src/LumaAI.Windows/LumaAI.Windows.csproj -c Release -o build/local
-./build/local/KokoroneAI.exe
-```
-
-最小パッケージ作成: `./scripts/Prepare-Distribution.ps1 -Minimal -Version kokorone-alpha`。内部のプロジェクト名・保存キーには互換性のため旧名称が残ります。
+このリポジトリでは現在、紹介文と関連文書・画像のみを公開しています。アプリ本体・開発ソース・ビルド手順はまだ公開していません。内部の保存キーには互換性のため旧名称が残ります。
 
 ## 公開と問い合わせ
 
@@ -77,4 +66,4 @@ dotnet build src/LumaAI.Windows/LumaAI.Windows.csproj -c Release -o build/local
 開発者: **くなまお**  
 問い合わせ: **kunamaokunamao052867@gmail.com**
 
-[配布用README](docs/DISTRIBUTION_README.md) / [第三者レビュー項目](docs/CLAUDE_CODE_REVIEW.md)
+[配布用README](docs/DISTRIBUTION_README.md) / [検証・レビューの確認項目](docs/REVIEW_CHECKLIST.md)
